@@ -1,0 +1,2 @@
+This is testing practice for using jest. This is for the Odin's Project's PROJECT: TESTING PRACTICE which can be found here: https://www.theodinproject.com/lessons/testing-practice.
+Completed: 12/20/2020

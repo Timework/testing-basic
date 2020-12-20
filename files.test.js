@@ -5,6 +5,8 @@ const capitalize = rewire('./files').__get__("capitalize");
 const reverseString = rewire('./files').__get__("reverseString");
 const calculator = rewire("./files").__get__("calculator");
 const cipher = rewire("./files").__get__("cipher");
+const analyze = rewire("./files").__get__("analyze");
+const testObj = analyze([1,8,3,4,2,6]);
 
 test('capitalizes the first letter of a word', () => {
     expect(capitalize('hello')).toBe('Hello');
@@ -40,4 +42,20 @@ test("cipher works with symbols", () => {
 
 test("cipher works with capital letters", () => {
     expect(cipher("This Is A Caesar Cipher", 7)).toBe("Aopz Pz H Jhlzhy Jpwoly");
+});
+
+test("analyze gives average", () => {
+    expect(testObj['average']).toBe(4);
+});
+
+test("analyze gives max", () => {
+    expect(testObj['max']).toBe(8);
+});
+
+test("analyze gives min", () => {
+    expect(testObj['min']).toBe(1);
+});
+
+test("analyze gives length", () => {
+    expect(testObj['length']).toBe(6);
 });
