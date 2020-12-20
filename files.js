@@ -31,8 +31,36 @@ const calculator = {
 
 }
 
+// this is a caesar cipher
+function cipher(word, num) {
+    const alphabet = "abcdefghijklmnopqrstuvwxyz";
+    const capital = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const letters = word.split("");
+    let answer = [];
+    for (let i=0; i <= letters.length; i++){
+        if (capital.includes(letters[i])) {
+            let proxy = capital.indexOf(letters[i]) + num;
+            while (proxy >= capital.length){
+                proxy -= capital.length;
+            };
+            answer.push(capital[proxy]);
+        } else if (alphabet.includes(letters[i])){
+            let proxy = alphabet.indexOf(letters[i]) + num;
+            while (proxy >= alphabet.length){
+                proxy -= alphabet.length;
+            };
+            answer.push(alphabet[proxy]);
+        } else {
+            answer.push(letters[i]);
+        };
+
+    };
+    return answer.join("");
+};
+
 module.exports = { 
     capitalize, 
     reverseString,
     calculator,
+    cipher,
 };
