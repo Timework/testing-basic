@@ -68,8 +68,9 @@ function analyze(arr) {
         } else if (arr[i] < mi){
             mi = arr[i];
         };
+        total += arr[i];
     };
-    let aver = arr.sort()[arr.length/2];
+    let aver = total/arr.length;
     let answer = {
         average: aver,
         max: ma,
